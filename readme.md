@@ -1,58 +1,45 @@
-<p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
+#Omnipay Gateways integration with Laravel and VueJS
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+###Intro
+This is a full Laravel 5.5 installation, with nothing customized beyond what needed in order to make it work (something like an MVP for testing Omnipay with VueJS and Laravel) although not production ready only for testing.
 
-## About Laravel
+Gateways/Features tested:
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as:
+- __omnipay-paypal__ [`purchase`]
+- __omnipay-authorizenet__ (__AIM__ [`purchase`], __CIM__ [`createCard` (customer profile), `purchase` (charge a customer profile)])
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications.
+![Checkout Form](https://github.com/alberto1el/omnipay-example/blob/master/checkoutForm.png "Checkout Form")
 
-## Learning Laravel
+###In order to run the form in the browser do:
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of any modern web application framework, making it a breeze to get started learning the framework.
+- `composer install`
+- yarn install (add `--no-bin-links` option if on Windows)
+- `npm run dev`
+- Add these environment variables to Laravels env file:
+  - `PAYPAL_SANDBOX=true`
+  - `COMPANY_LOGO_MEDIUM` (can be an empty string)
+  - `PAYPAL_USERNAME`
+  - `PAYPAL_PASSWORD`
+  - `PAYPAL_SIGNATURE`
+  - `AUTHNET_PUBLIC_CLIENT_KEY`
+  - `AUTHNET_API_LOGIN_ID`
+  - `TEST_AUTHORIZENET_TRANSID`
+  - `TEST_AUTHORIZENET_TRANSKEY`
 
-If you're not in the mood to read, [Laracasts](https://laracasts.com) contains over 1100 video tutorials on a range of topics including Laravel, modern PHP, unit testing, JavaScript, and more. Boost the skill level of yourself and your entire team by digging into our comprehensive video library.
+###Notes:
+When paying with Authorize.net (card option), fist the card is opaqued using the Authorize.net Accept.js library, then the form will be sent to the laravel backend with only the opaqued data.
 
-## Laravel Sponsors
+If you use the card option and choose 'Save this information for next time' an Authorize.net Customer Payment Profile will be created using the form information, then a charge will be made to that profile (in the same request).
 
-We would like to extend our thanks to the following sponsors for helping fund on-going Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell):
+When paying with Paypal, the form is sent as a form POST request to the server, then the browser is redirected to paypal then back to the laravel backend to finish the payment (which Laravel autoFinishes).
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Pulse Storm](http://www.pulsestorm.net/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
+All relevant backend code can be found at: 
 
-## Contributing
+    /app/Http/Controllers/ChargeController
+    /app/Payment/Gateways/
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+###Extra Note:
+I use this repository as a proof of concept for an application I am developing, feel free to comment in order to improve code I know it is not 100% production ready but it was done in a day and also helped get to understand VueRouter and VueComponents a little more.
 
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Thanks for reading!

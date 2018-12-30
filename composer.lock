@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ac2bd2dde84a9efe06d9dbf414c4f071",
+    "content-hash": "a44b35e843c4b00968e173788b1e0d25",
     "packages": [
         {
             "name": "clue/stream-filter",
@@ -1333,16 +1333,16 @@
         },
         {
             "name": "omnipay/authorizenet",
-            "version": "3.0.0",
+            "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/thephpleague/omnipay-authorizenet.git",
-                "reference": "04de992efa9a95632ccaa5f95d9c0f3f75b2545c"
+                "url": "https://github.com/alberto1el/omnipay-authorizenet.git",
+                "reference": "b66ea0dc98f707dd54a542f8f65159f1aa6b9d0d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/omnipay-authorizenet/zipball/04de992efa9a95632ccaa5f95d9c0f3f75b2545c",
-                "reference": "04de992efa9a95632ccaa5f95d9c0f3f75b2545c",
+                "url": "https://api.github.com/repos/alberto1el/omnipay-authorizenet/zipball/b66ea0dc98f707dd54a542f8f65159f1aa6b9d0d",
+                "reference": "b66ea0dc98f707dd54a542f8f65159f1aa6b9d0d",
                 "shasum": ""
             },
             "require": {
@@ -1364,7 +1364,17 @@
                     "Omnipay\\AuthorizeNet\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "scripts": {
+                "test": [
+                    "phpunit"
+                ],
+                "check-style": [
+                    "phpcs -p --standard=PSR2 src/"
+                ],
+                "fix-style": [
+                    "phpcbf -p --standard=PSR2 src/"
+                ]
+            },
             "license": [
                 "MIT"
             ],
@@ -1390,7 +1400,10 @@
                 "pay",
                 "payment"
             ],
-            "time": "2018-05-17T12:53:23+00:00"
+            "support": {
+                "source": "https://github.com/alberto1el/omnipay-authorizenet/tree/master"
+            },
+            "time": "2018-12-30T09:58:35+00:00"
         },
         {
             "name": "omnipay/common",
@@ -5152,9 +5165,18 @@
             "time": "2018-12-25T11:19:39+00:00"
         }
     ],
-    "aliases": [],
+    "aliases": [
+        {
+            "alias": "3.0",
+            "alias_normalized": "3.0.0.0",
+            "version": "9999999-dev",
+            "package": "omnipay/authorizenet"
+        }
+    ],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "omnipay/authorizenet": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
