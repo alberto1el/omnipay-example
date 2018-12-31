@@ -16,7 +16,7 @@
         "laravel/framework": "5.5.*",
         "laravel/tinker": "~1.0",
         "league/omnipay": "^3.0",
-        "omnipay/authorizenet": "dev-master#c3efc2146575e342de1b48c621d5dfa444c01b99 as 3.0",
+        "omnipay/authorizenet": "dev-master#598894884fd9ba45f0e74c99b30a7657e5188015 as 3.0",
         "omnipay/paypal": "^3.0"
     },
     "require-dev": {
