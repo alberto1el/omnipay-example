@@ -39,6 +39,13 @@ All relevant backend code can be found at:
     /app/Http/Controllers/ChargeController
     /app/Payment/Gateways/
 
+Relevant frontend code:
+
+    /resources/assets/js/components/PaymentFormComponent.vue
+    /resources/assets/js/app
+    /resources/views/welcome.blade
+
+
 ### Extra Note:
 I use this repository as a proof of concept for an application I am developing, feel free to comment in order to improve code I know it is not 100% production ready but it was done in a day and also helped get to understand VueRouter and VueComponents a little more.
 
