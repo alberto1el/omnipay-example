@@ -22,10 +22,10 @@ Gateways/Features tested:
   - `PAYPAL_USERNAME`
   - `PAYPAL_PASSWORD`
   - `PAYPAL_SIGNATURE`
-  - `AUTHNET_PUBLIC_CLIENT_KEY` (used by Accept.js Authorize.net)
-  - `AUTHNET_API_LOGIN_ID` (used by Accept.js Authorize.net)
-  - `TEST_AUTHORIZENET_TRANSID` (the same as `AUTHNET_PUBLIC_CLIENT_KEY` I just like to differentiate between browser and server variables)
-  - `TEST_AUTHORIZENET_TRANSKEY` (key used by the server to communicate to Authorize.net )
+  - `AUTHNET_PUBLIC_CLIENT_KEY` (used by Accept.js Authorize.net) //Find it in your authorize.net account>Settings>Manage Public Client Key>Client Key
+  - `AUTHNET_API_LOGIN_ID` (used by Accept.js Authorize.net) //Find it in your authorize.net account>Settings>API Credentials & Keys>API Login ID
+  - `TEST_AUTHORIZENET_TRANSID` (the same as `AUTHNET_PUBLIC_CLIENT_KEY` I just like to differentiate between browser and server variables) //Find it in your authorize.net account>Settings>API Credentials & Keys>API Login ID
+  - `TEST_AUTHORIZENET_TRANSKEY` (key used by the server to communicate to Authorize.net ) //Find it in your authorize.net account>Settings>API Credentials & Keys>Transaction Key
 
 ### Notes:
 When paying with Authorize.net (card option), fist the card is opaqued using the Authorize.net Accept.js library, then the form will be sent to the laravel backend with only the opaqued data.
