@@ -19,6 +19,7 @@ Gateways/Features tested:
 4. Add these environment variables to Laravels env file:
   - `PAYPAL_SANDBOX=true`
   - `COMPANY_LOGO_MEDIUM` (can be an empty string)
+  - The following 3 variables must be obtained from your paypal account and these are the 'API credentials' not your paypal account information.
   - `PAYPAL_USERNAME`
   - `PAYPAL_PASSWORD`
   - `PAYPAL_SIGNATURE`
