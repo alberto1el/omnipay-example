@@ -4,19 +4,13 @@
     "keywords": ["framework", "laravel"],
     "license": "MIT",
     "type": "project",
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/alberto1el/omnipay-authorizenet"
-        }
-    ],
     "require": {
         "php": ">=7.0.0",
         "fideloper/proxy": "~3.3",
         "laravel/framework": "5.5.*",
         "laravel/tinker": "~1.0",
         "league/omnipay": "^3.0",
-        "omnipay/authorizenet": "dev-master#598894884fd9ba45f0e74c99b30a7657e5188015 as 3.0",
+        "omnipay/authorizenet": "dev-master#23458a45419998376b5f4deddaf6b05b99030427 as 3.0",
         "omnipay/paypal": "^3.0"
     },
     "require-dev": {
