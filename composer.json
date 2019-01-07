@@ -1,7 +1,7 @@
 {
-    "name": "laravel/laravel",
-    "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
+    "name": "alberto1el/omnipay-example",
+    "description": "Omnipay example on Laravel.",
+    "keywords": ["omnipay", "laravel", "vue.js", "authorize.net", "bootstrap"],
     "license": "MIT",
     "type": "project",
     "require": {
